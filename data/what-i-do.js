@@ -16,11 +16,11 @@ const what_i_do = [
     description: "I do write.......sometimes.",
     imgUrl: "/img/kim-profile.png",
     href: [
-      { title: "HashNode", url: "https://blog.sykim.me" },
-      {
-        title: "Mirror.xyz",
-        url: "https://mirror.xyz/0x7BaC55B885cA0D46658Daf09d0FFBEfBbeb31b5C",
-      },
+      { title: "Personal Blog", url: "/blog" },
+      // {
+      //   title: "Mirror.xyz",
+      //   url: "https://mirror.xyz/0x7BaC55B885cA0D46658Daf09d0FFBEfBbeb31b5C",
+      // },
     ],
     icon: (
       <BsPen className="text-white object-cover h-10 w-10 md:h-12 md:w-12 m-auto p-2" />

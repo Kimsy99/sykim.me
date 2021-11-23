@@ -8,11 +8,11 @@ type Href = {
 type props = {
   title: string;
   description: string;
-  imgUrl: string;
   href: Array<Href>;
   icon: JSX.Element;
 };
-const SkillCard = ({ title, description, imgUrl, href, icon }: props) => {
+const SkillCard = ({ title, description, href, icon }: props) => {
+  console.log("title: ", title);
   return (
     <div className="bg-gray-800 transition ease-in-out hover:-translate-y-3 duration-700 flex justify-between rounded-lg col-span-full md:col-span-6 skill-card">
       <div className="flex flex-col justify-between ">
@@ -30,9 +30,9 @@ const SkillCard = ({ title, description, imgUrl, href, icon }: props) => {
           ))}
         </div>
       </div>
-      <div className="hidden md:inline-flex shadow-lg rounded-full md:h-16 md:w-16 h-10 w-10">
-        {icon}
-      </div>
+      {/* <div className="hidden md:inline-flex shadow-lg rounded-full md:h-16 md:w-16 h-10 w-10"> */}
+      {/* {icon} */}
+      {/* </div> */}
     </div>
   );
 };

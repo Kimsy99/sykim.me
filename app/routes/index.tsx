@@ -1,50 +1,18 @@
 import type { MetaFunction, LoaderFunction } from "remix";
 import { useLoaderData, json, Link } from "remix";
 import { getSocialMetas } from "../../utils/seo";
-
-type IndexData = {
-  resources: Array<{ name: string; url: string }>;
-  demos: Array<{ name: string; to: string }>;
-};
+import { what_i_do } from "../../data/what-i-do.js";
+import SkillCard from "~/components/SkillCard";
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
 export let loader: LoaderFunction = () => {
-  let data: IndexData = {
-    resources: [
-      {
-        name: "Remix Docs",
-        url: "https://remix.run/docs",
-      },
-      {
-        name: "React Router Docs",
-        url: "https://reactrouter.com/docs",
-      },
-      {
-        name: "Remix Discord",
-        url: "https://discord.gg/VBePs6d",
-      },
-    ],
-    demos: [
-      {
-        to: "demos/actions",
-        name: "Actions",
-      },
-      {
-        to: "demos/about",
-        name: "Nested Routes, CSS loading/unloading",
-      },
-      {
-        to: "demos/params",
-        name: "URL Params and Error Boundaries",
-      },
-    ],
-  };
+  let data = what_i_do;
 
   // https://remix.run/api/remix#json
-  return json(data);
+  return data;
 };
 
 // https://remix.run/api/conventions#meta
@@ -60,8 +28,8 @@ export let meta: MetaFunction = () => {
 
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
-  let data = useLoaderData<IndexData>();
-
+  let data = useLoaderData<any>();
+  console.log("data: ", data);
   return (
     <div className="max-w-screen-lg  mx-auto">
       {/* <head>
@@ -188,18 +156,17 @@ export default function Index() {
             What i do for living/fun
           </h2>
         </div>
-        {/* <div className="grid gap-x-4 grid-cols-4 md:grid-cols-4 lg:gap-x-6 lg:grid-cols-12 mx-auto gap-10 mt-5">
-          {what_i_do.map((stuff, index) => (
+        <div className="grid gap-x-4 grid-cols-4 md:grid-cols-4 lg:gap-x-6 lg:grid-cols-12 mx-auto gap-10 mt-5">
+          {data.map((stuff, index) => (
             <SkillCard
               key={index}
               title={stuff.title}
               description={stuff.description}
-              imgUrl={stuff.imgUrl}
-              to={stuff.to}
+              href={stuff.href}
               icon={stuff.icon}
             />
           ))}
-        </div> */}
+        </div>
       </main>
 
       <footer>

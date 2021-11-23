@@ -12,9 +12,6 @@ import {
 } from "remix";
 import type { LinksFunction } from "remix";
 import styles from "./styles/app.css";
-import deleteMeRemixStyles from "~/styles/demos/remix.css";
-import globalStylesUrl from "~/styles/global.css";
-import darkStylesUrl from "~/styles/dark.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 import proseStyles from "./styles/prose.css";
