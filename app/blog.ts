@@ -1,5 +1,4 @@
 import path from "path";
-import fs from "fs/promises";
 import parseFrontMatter from "front-matter";
 import invariant from "tiny-invariant";
 import { processMarkdown } from "@ryanflorence/md";
@@ -91,12 +90,4 @@ export async function getPost(slug: string) {
   // );
 	// let html = await processMarkdown(body);
   // return { slug, html, title: attributes.title };
-}
-export async function createPost(blog: Blog) {
-  let md = `---\ntitle: ${blog.title}\n---\n\n${blog.markdown}`;
-  await fs.writeFile(
-    path.join(blogsPath, blog.slug + ".md"),
-    md
-  );
-  return getPost(blog.slug);
 }
