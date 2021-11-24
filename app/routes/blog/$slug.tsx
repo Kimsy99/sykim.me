@@ -10,7 +10,6 @@ import { getSocialMetas } from "../../../utils/seo";
 // };
 export let loader: LoaderFunction = async ({ params }: any) => {
   // invariant(params.slug, "expected params.slug");
-  console.log("params.slug: ", params.slug);
   return getPost(params.slug);
 };
 
@@ -45,6 +44,13 @@ const BlogSlug = () => {
         <h2 className="leading-tight text-xl md:text-xl text-blueGray-500 pt-4">
           {blog.date.split("T")[0]}
         </h2>
+        <div className="flex flex-wrap w-12/12 pt-4 gap-y-4 gap-x-4">
+          {blog.tags.map((tag: string) => (
+            <span className="bg-gray-800 rounded-lg px-4 py-2 text-center text-blueGray-500 mr-4">
+              #{tag}
+            </span>
+          ))}
+        </div>
         <img
           src={blog.coverImage}
           alt={blog.title}

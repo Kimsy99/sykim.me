@@ -1,7 +1,7 @@
 import path from "path";
 import parseFrontMatter from "front-matter";
 import invariant from "tiny-invariant";
-import { processMarkdown } from "@ryanflorence/md";
+import { marked } from "marked";
 import { ApolloClient, gql, InMemoryCache, useQuery } from "@apollo/client";
 
 export type Blog = {
@@ -65,29 +65,27 @@ const GET_BLOG_POST =gql`
       slug
       cuid
       coverImage
-      content
+      contentMarkdown
       dateAdded
+      tags{
+        slug
+      }
     }
   }
 `
 export async function getPost(slug: string) {
-  // const client = new ApolloClient({
-  //   uri: "https://api.hashnode.com/",
-  //   cache: new InMemoryCache(),
-  // });
   const { data } = await client.query({
     query: GET_BLOG_POST,
     variables:{slug}
   });
-  console.log("data: ", data)
-  return {slug: data.post.slug, html:data.post.content, coverImage:data.post.coverImage, title:data.post.title,date: data.post.dateAdded}
-  // let filepath = path.join(blogsPath, slug + ".md");
-  // let file = await fs.readFile(filepath);
-  // let { attributes, body } = parseFrontMatter(file.toString());
-  // invariant(
-  //   isValidPostAttributes(attributes),
-  //   `Blog ${filepath} is missing attributes`
-  // );
-	// let html = await processMarkdown(body);
-  // return { slug, html, title: attributes.title };
+  let html = marked(data.post.contentMarkdown)
+  // console.log(data.post)
+  return {
+    slug: data.post.slug, 
+    tags: data.post.tags.map(tag => tag.slug),
+    html, 
+    coverImage:data.post.coverImage, 
+    title:data.post.title,
+    date: data.post.dateAdded
+  }
 }
