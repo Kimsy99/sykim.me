@@ -18,7 +18,6 @@ export let meta: MetaFunction = () => {
 };
 const Blogs = () => {
   let blogs = useLoaderData();
-  console.log("blogs: ", blogs);
   return (
     <div className="max-w-screen-lg  mx-auto  px-5">
       {/* <Head>

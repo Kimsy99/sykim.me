@@ -11,10 +11,10 @@ const Navbar = () => {
     setNavbarOpen(!navbarOpen);
   };
   return (
-    <nav className="font-display relative flex flex-wrap items-center py-2 px-4 sm:px-8 z-10">
+    <nav className="font-display relative flex flex-wrap items-center py-auto px-4 sm:px-8 z-10">
       <div className="container max-w-screen-lg mx-auto flex flex-wrap items-center">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <Link to="/">
+          <Link prefetch="intent" to="/">
             {/* <a className="my-auto text-3xl logo-title text-white">sykim</a> */}
             <a className="my-auto text-3xl logo-title text-white">
               <img
@@ -94,9 +94,9 @@ const Navbar = () => {
           {/* Full */}
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto md:pt-2 sm:pt-2 md:ml-0 sm:ml-0">
             <li>
-              <Link to="/blog">
+              <Link prefetch="intent" to="/blog">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-lg font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-lg font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Blog
@@ -104,9 +104,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/work">
+              <Link prefetch="intent" to="/work">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-lg font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-lg font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Work
@@ -114,9 +114,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/skill">
+              <Link prefetch="intent" to="/skill">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-lg font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-lg font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Skill
@@ -124,16 +124,16 @@ const Navbar = () => {
               </Link>
             </li>
             {/* <li>
-              <Link to="/notes">
-                <a className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-lg font-medium focus:outline-none hover:text-white">
+              <Link prefetch="intent" to="/notes">
+                <a className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-lg font-medium underlined focus:outline-none hover:text-white">
                   Notes
                 </a>
               </Link>
             </li> */}
             <li>
-              <Link to="/about">
+              <Link prefetch="intent" to="/about">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block whitespace-nowrap text-lg font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block whitespace-nowrap text-lg font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   About
@@ -143,7 +143,7 @@ const Navbar = () => {
             <li>
               <a href="https://timeline.sykim.me">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-lg font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-lg font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Timeline
@@ -161,9 +161,9 @@ const Navbar = () => {
         >
           <ul className="flex flex-col text-center lg:flex-row list-none lg:ml-auto md:pt-2 sm:pt-2 ml-10">
             <li>
-              <Link to="/blog">
+              <Link prefetch="intent" to="/blog">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-2xl font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Blog
@@ -171,9 +171,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/work">
+              <Link prefetch="intent" to="/work">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-2xl font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Work
@@ -181,9 +181,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/skill">
+              <Link prefetch="intent" to="/skill">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-2xl font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Skill
@@ -191,16 +191,16 @@ const Navbar = () => {
               </Link>
             </li>
             {/* <li>
-              <Link to="/notes">
-                <a className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-2xl font-medium focus:outline-none hover:text-white">
+              <Link prefetch="intent" to="/notes">
+                <a className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white">
                   Notes
                 </a>
               </Link>
             </li> */}
             <li>
-              <Link to="/about">
+              <Link prefetch="intent" to="/about">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block whitespace-nowrap text-2xl font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   About
@@ -210,7 +210,7 @@ const Navbar = () => {
             <li>
               <a href="https://timeline.sykim.me">
                 <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-2xl font-medium focus:outline-none hover:text-white"
+                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Timeline

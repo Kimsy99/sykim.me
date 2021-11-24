@@ -37,7 +37,6 @@ let firstRender = true;
 
 function PageLoadingMessage() {
   const transition = useTransition();
-  console.log("transition: ", transition);
   const [words, setWords] = React.useState<Array<string>>([]);
   const [pendingPath, setPendingPath] = React.useState("");
   // const showLoader = Boolean(transition.state !== "idle");

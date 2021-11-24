@@ -79,7 +79,6 @@ export async function getPost(slug: string) {
     variables:{slug}
   });
   let html = marked(data.post.contentMarkdown)
-  // console.log(data.post)
   return {
     slug: data.post.slug, 
     tags: data.post.tags.map(tag => tag.slug),

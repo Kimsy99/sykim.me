@@ -20,10 +20,10 @@ const SkillCard = ({ title, description, href, icon }: props) => {
           <h1 className="text-2xl font-semibold text-white">{title}</h1>
           <p className="text-gray-300 md:w-11/12 md:mr-0">{description}</p>
         </div>
-        <div>
+        <div className="w-fit">
           {href.map((obj, index) => (
             <Link key={index} to={obj.url}>
-              <p className="hover:text-white text-blueGray-500 cursor-pointer">
+              <p className="hover:text-white text-blueGray-500 cursor-pointer underlined">
                 READ MORE @{obj.title} →
               </p>
             </Link>

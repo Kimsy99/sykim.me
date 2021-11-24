@@ -3,6 +3,7 @@ import { useLoaderData, json, Link } from "remix";
 import { getSocialMetas } from "../../utils/seo";
 import { what_i_do } from "../../data/what-i-do.js";
 import SkillCard from "~/components/SkillCard";
+import { motion, useReducedMotion } from "framer-motion";
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
@@ -29,7 +30,11 @@ export let meta: MetaFunction = () => {
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
   let data = useLoaderData<any>();
-  console.log("data: ", data);
+  const shouldReduceMotion = useReducedMotion();
+  const childVariants = {
+    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
   return (
     <div className="max-w-screen-lg  mx-auto">
       {/* <head>
@@ -57,18 +62,33 @@ export default function Index() {
       <main className="mx-auto px-5 ">
         <div className="relative h-hero min-h-full grid md:grid-cols-2 gap-8 grid-cols-1 justify-center place-content-center -mt-20">
           <div className="w-full object-cover md:w-12/12 w-9/12 mx-auto ">
-            <img
+            <motion.img
               src="/img/kim-profile.png"
               alt="My Profile Picture"
               height={480}
               width={665}
+              initial={{ scale: shouldReduceMotion ? 1 : 1.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.75 }}
               // layout="responsive"
             />
           </div>
-          <h2 className="text-center md:text-left leading-tight text-3xl md:text-3xl text-white md:self-center ">
-            I am <span className="underline-yellow">Kim</span>, a student
-            developer, community builder and digital product enthusiats.
-          </h2>
+          <motion.div
+            initial="initial"
+            animate="visible"
+            variants={{
+              initial: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+            className="md:self-center "
+          >
+            <motion.div variants={childVariants}>
+              <h2 className="text-center md:text-left leading-tight text-3xl md:text-3xl text-white md:self-center ">
+                I am <span className="underline-yellow">Kim</span>, a student
+                developer, community builder and digital product enthusiats.
+              </h2>
+            </motion.div>
+          </motion.div>
         </div>
         {/* <div className="relative grid gap-x-4 grid-cols-4 md:grid-cols-8 lg:gap-x-6 lg:grid-cols-12 mx-auto max-w-7xl lg:mb-24 pt-24 h-auto lg:pb-12 lg:mb-64 lg:min-h-[40rem] ">
           <div className="col-span-6 mb-12 lg:mb-0 lg:col-start-6 lg:col-span-7 lg:px-0 lg:-mt-24 lg:-mr-5vw items-center justify-center object-cover">
