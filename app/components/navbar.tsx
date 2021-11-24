@@ -141,14 +141,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="https://timeline.sykim.me">
+              <a href="https://timeline.sykim.me">
                 <a
                   className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-lg font-medium focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Timeline
                 </a>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -208,14 +208,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="https://timeline.sykim.me">
+              <a href="https://timeline.sykim.me">
                 <a
                   className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-2 underlined block  whitespace-nowrap text-2xl font-medium focus:outline-none hover:text-white"
                   onClick={toggleNav}
                 >
                   Timeline
                 </a>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

@@ -9,13 +9,98 @@ import {
   ScrollRestoration,
   useCatch,
   useLocation,
+  useTransition,
 } from "remix";
 import type { LinksFunction } from "remix";
 import styles from "./styles/app.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 import proseStyles from "./styles/prose.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { NotificationMessage } from "./components/NotificationMessage";
+import { LoadingCircle } from "./components/LoadingCircle";
+import { useSpinDelay } from "spin-delay";
 
+const LOADER_WORDS = ["loading", "fetching", "transfer"];
+
+const ACTION_WORDS = [
+  "packaging",
+  "zapping",
+  "validating",
+  "processing",
+  "calculating",
+  "computing",
+  "computering",
+];
+
+let firstRender = true;
+
+function PageLoadingMessage() {
+  const transition = useTransition();
+  console.log("transition: ", transition);
+  const [words, setWords] = React.useState<Array<string>>([]);
+  const [pendingPath, setPendingPath] = React.useState("");
+  // const showLoader = Boolean(transition.state !== "idle");
+  const showLoader = useSpinDelay(Boolean(transition.state !== "idle"), {
+    delay: 400,
+    minDuration: 100,
+  });
+
+  React.useEffect(() => {
+    if (firstRender) return;
+    if (transition.state === "idle") return;
+    if (transition.state === "loading") setWords(LOADER_WORDS);
+    if (transition.state === "submitting") setWords(ACTION_WORDS);
+
+    const interval = setInterval(() => {
+      setWords(([first, ...rest]) => [...rest, first] as Array<string>);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [pendingPath, transition.state]);
+
+  React.useEffect(() => {
+    if (firstRender) return;
+    if (transition.state === "idle") return;
+    setPendingPath(transition.location.pathname);
+  }, [transition]);
+
+  React.useEffect(() => {
+    firstRender = false;
+  }, []);
+
+  const action = words[0];
+
+  return (
+    <NotificationMessage position="bottom-right" visible={showLoader}>
+      <div className="flex items-center w-64">
+        <motion.div
+          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+          animate={{ rotate: 360 }}
+        >
+          <LoadingCircle size={48} />
+        </motion.div>
+        <div className="inline-grid ml-4">
+          <AnimatePresence>
+            <div className="flex col-start-1 row-start-1 overflow-hidden">
+              <motion.span
+                key={action}
+                initial={{ y: 15, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -15, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="flex-none text-white"
+              >
+                {action}
+              </motion.span>
+            </div>
+          </AnimatePresence>
+          <span className="truncate text-white">path: {pendingPath}</span>
+        </div>
+      </div>
+    </NotificationMessage>
+  );
+}
 /**
  * The `links` export is a function that returns an array of objects that map to
  * the attributes for an HTML `<link>` element. These will load `<link>` tags on
@@ -47,6 +132,7 @@ export default function App() {
   return (
     <Document>
       <Layout>
+        <PageLoadingMessage />
         <Outlet />
       </Layout>
     </Document>
@@ -82,7 +168,8 @@ function Document({
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 transition duration-500">
+      {/* <PageLoadingMessage /> */}
       <Navbar />
       {/* <div className="">
         <div className="container remix-app__main-content"></div>
