@@ -60,6 +60,7 @@ const SkillsPage = () => {
             <li>Typescript</li>
             <li>Python</li>
             <li>C++</li>
+            <li>C#</li>
             <li>SQL</li>
             <li>Java</li>
             <li>Kotlin</li>
@@ -82,10 +83,13 @@ const SkillsPage = () => {
             <li>GatsbyJS</li>
             <li>VueJS</li>
             <li>NodeJS</li>
+            <li>ASP.net</li>
+            <li>.NET Framework</li>
             <li>ExpressJS</li>
             <li>Flutter</li>
             <li>TensorFlow</li>
             <li>Jetpack Compose (Android - Kotlin)</li>
+            <li>Solana - Anchor</li>
           </ul>
         </div>
         <div>
