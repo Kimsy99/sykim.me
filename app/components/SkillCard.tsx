@@ -12,7 +12,6 @@ type props = {
   icon: JSX.Element;
 };
 const SkillCard = ({ title, description, href, icon }: props) => {
-  console.log("title: ", title);
   return (
     <div className="bg-gray-800 transition ease-in-out hover:-translate-y-3 duration-700 flex justify-between rounded-lg col-span-full md:col-span-6 skill-card">
       <div className="flex flex-col justify-between ">
