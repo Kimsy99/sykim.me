@@ -118,15 +118,16 @@ export default function Index() {
         <div className="about">
           <p className="leading-8 text-lg text-blueGray-500">
             I am <span className="underline-yellow">Kim Sheng Yong</span>, Final
-            year SWE student from Xiamen University Malaysia. Founder and Lead
-            of XMUM Tech Club. In my free time, I love to explore technologies
-            and particularly now, I am interested in Crypto and Blockchain.
+            year SWE student from Xiamen University Malaysia. Founder and
+            Ex-Lead of XMUM Tech Club. In my free time, I love to explore
+            technologies and particularly now, I am interested in Crypto and
+            Blockchain.
           </p>
           <br />
           <p className="leading-8 text-lg text-blueGray-500">
             I work professionally as a contract/part-time full-stack developer
-            during my studies, which leads me to have some experience in
-            developing web/app applications. (See my works{" "}
+            (recently to Web3) during my studies, which leads me to have some
+            experience in developing web/app applications. (See my works{" "}
             <Link to="/work">here</Link>)
           </p>
           <br />
