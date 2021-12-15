@@ -217,18 +217,26 @@ export function CatchBoundary() {
 }
 
 export function ErrorBoundary({ error }: { error: Error }) {
-  console.error(error);
+  console.log(error);
   return (
-    <Document title="Error!">
+    <Document title="Error! Something Went Wrong">
       <Layout>
-        <div>
-          <h1>There was an error</h1>
+        <div className="h-screen max-w-screen-lg  mx-auto  px-5">
+          {/* <h1>There was an error</h1>
           <p>{error.message}</p>
           <hr />
           <p>
             Hey, developer, you should replace this with what you want your
             users to see.
-          </p>
+          </p> */}
+          <div className="flex flex-col col-span-full space-y-2 lg:justify-between my-20">
+            <h2 className="leading-tight text-3xl md:text-4xl text-white ">
+              Oh no!!! Something went wrong!!!!
+            </h2>
+            <h2 className="leading-tight text-3xl md:text-4xl text-blueGray-500">
+              Please Visit Again!!
+            </h2>
+          </div>
         </div>
       </Layout>
     </Document>

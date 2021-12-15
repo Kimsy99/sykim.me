@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "remix";
+import { Dialog } from "@headlessui/react";
 
 const Navbar = () => {
   const [mounted, setMounted] = React.useState(false);
@@ -153,72 +154,100 @@ const Navbar = () => {
           </ul>
         </div>
         {/* Burger nav */}
-        <div
-          className={`${navbarOpen ? " flex" : " hidden"}
-					lg:flex lg:ml-auto lg:hidden z-10 backdrop-filter backdrop-blur-lg  fixed pin pt-24
-					`}
-          onClick={toggleNav}
+        <Dialog
+          as="div"
+          className="lg:flex lg:ml-auto lg:hidden z-10 backdrop-filter backdrop-blur-lg bg-opacity-75 inset-0 z-50  fixed pin pt-24"
+          open={navbarOpen}
+          onClose={toggleNav}
+          // className={`${navbarOpen ? " flex" : " hidden"}
+          // lg:flex lg:ml-auto lg:hidden z-10 backdrop-filter backdrop-blur-lg bg-black/20 inset-0 z-50  fixed pin pt-24
+          // `}
+          // onClick={toggleNav}
         >
-          <ul className="flex flex-col text-center lg:flex-row list-none lg:ml-auto md:pt-2 sm:pt-2 ml-10">
-            <li>
-              <Link prefetch="intent" to="/blog">
-                <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
-                  onClick={toggleNav}
-                >
-                  Blog
+          <Dialog.Overlay className="fixed inset-0 bg-opacity-50 backdrop-blur-lg" />
+          <div className="fixed top-4 right-4 w-full max-w-xs bg-gray-900 rounded-lg shadow-lg p-6 text-base font-semibold text-gray-900">
+            <button
+              type="button"
+              className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-600"
+              onClick={toggleNav}
+            >
+              <span className="sr-only">Close navigation</span>
+              <svg
+                viewBox="0 0 10 10"
+                className="w-2.5 h-2.5 overflow-visible"
+                aria-hidden="true"
+              >
+                <path
+                  d="M0 0L10 10M10 0L0 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+            <ul className="space-y-6">
+              <li></li>
+              <li>
+                <Link prefetch="intent" to="/blog">
+                  <a
+                    className="text-blueGray-500 w-min flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
+                    onClick={toggleNav}
+                  >
+                    Blog
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link prefetch="intent" to="/work">
+                  <a
+                    className="text-blueGray-500 w-min flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
+                    onClick={toggleNav}
+                  >
+                    Work
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link prefetch="intent" to="/skill">
+                  <a
+                    className="text-blueGray-500 w-min flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
+                    onClick={toggleNav}
+                  >
+                    Skill
+                  </a>
+                </Link>
+              </li>
+              {/* <li>
+                  <Link prefetch="intent" to="/notes">
+                    <a className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white">
+                      Notes
+                    </a>
+                  </Link>
+                </li> */}
+              <li>
+                <Link prefetch="intent" to="/about">
+                  <a
+                    className="text-blueGray-500 w-min flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
+                    onClick={toggleNav}
+                  >
+                    About
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <a href="https://timeline.sykim.me">
+                  <a
+                    className="text-blueGray-500 w-min flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
+                    onClick={toggleNav}
+                  >
+                    Timeline
+                  </a>
                 </a>
-              </Link>
-            </li>
-            <li>
-              <Link prefetch="intent" to="/work">
-                <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
-                  onClick={toggleNav}
-                >
-                  Work
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link prefetch="intent" to="/skill">
-                <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
-                  onClick={toggleNav}
-                >
-                  Skill
-                </a>
-              </Link>
-            </li>
-            {/* <li>
-              <Link prefetch="intent" to="/notes">
-                <a className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 py-auto underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white">
-                  Notes
-                </a>
-              </Link>
-            </li> */}
-            <li>
-              <Link prefetch="intent" to="/about">
-                <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
-                  onClick={toggleNav}
-                >
-                  About
-                </a>
-              </Link>
-            </li>
-            <li>
-              <a href="https://timeline.sykim.me">
-                <a
-                  className="text-blueGray-500 flex items-center px-6 sm:px-0 md:px-2 my-2 underlined block  whitespace-nowrap text-2xl font-medium underlined focus:outline-none hover:text-white"
-                  onClick={toggleNav}
-                >
-                  Timeline
-                </a>
-              </a>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
+        </Dialog>
 
         <div className="hover:opacity-75 md:hidden sm:hidden">
           <button aria-label="Toggle Dark Mode" type="button" className="">
@@ -228,7 +257,7 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 stroke="currentColor"
-                className="h-5 w-5 text-blueGray-500"
+                className="h-5 w-5 text-blueGray-500 z-10"
               >
                 <path
                   strokeLinecap="round"
