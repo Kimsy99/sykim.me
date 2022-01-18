@@ -167,7 +167,7 @@ function Document({
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="bg-gray-900 transition duration-500">
+    <div className="bg-gray-900 transition duration-500 min-h-screen">
       {/* <PageLoadingMessage /> */}
       <Navbar />
       {/* <div className="">
@@ -221,7 +221,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Document title="Error! Something Went Wrong">
       <Layout>
-        <div className="h-screen max-w-screen-lg  mx-auto  px-5">
+        <div className="min-h-screen max-w-screen-lg  mx-auto  px-5">
           {/* <h1>There was an error</h1>
           <p>{error.message}</p>
           <hr />

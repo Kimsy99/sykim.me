@@ -16,7 +16,8 @@ export let meta: MetaFunction = () => {
 };
 const Works = () => {
   return (
-    <div className="max-w-screen-lg  mx-auto  px-5">
+    // height: 84.23vh;
+    <div className="max-w-screen-lg mx-auto px-5">
       {/* <Head>
         <title>Works by Kim Sheng Yong</title>
         <meta
