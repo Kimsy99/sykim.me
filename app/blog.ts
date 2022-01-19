@@ -44,7 +44,7 @@ export async function getPosts() {
   
   const data: any = await request(`{
       repository(name: "sykim.me", owner: "Kimsy99") {
-        issues(first: 50,orderBy: {field: UPDATED_AT, direction: ASC}) {
+        issues(first: 50,orderBy: {field: UPDATED_AT, direction: DESC}) {
           nodes {
             title
             number
