@@ -12,21 +12,13 @@ import formatDistance from "date-fns/formatDistance/index.js";
 // };
 export let loader: LoaderFunction = async (props: any) => {
   // invariant(params.slug, "expected params.slug");
-  const { request, params } = props;
-  // console.log("request: ", request);
-  console.log("props: ", props.params);
   return getPost(props.params.slug);
 };
 
 const BlogSlug = () => {
   let blog = useLoaderData();
-  // return (
-  //   <div>
-  //     <h1>{blog.title}</h1>
-  //   </div>
-  // );
+
   return (
-    // <div dangerouslySetInnerHTML={{ __html: blog.html }} className="prose">
     <div className="max-w-screen-lg mx-auto px-5 px-10vw">
       <head>
         <title>{blog.title}</title>
@@ -49,14 +41,16 @@ const BlogSlug = () => {
         <h2 className="leading-tight text-xl md:text-xl text-blueGray-500 pt-4">
           {blog.date.split("T")[0]}
         </h2>
-        {/* <div className="flex flex-wrap w-12/12 pt-4 gap-y-4 gap-x-4">
-          {blog.tags.map((tag: string) => (
-            <span className="bg-gray-800 rounded-lg px-4 py-2 text-center text-blueGray-500 mr-4">
-              #{tag}
-            </span>
-          ))}
-        </div>
-        <img
+        {blog?.labels.length != 0 && (
+          <div className="flex flex-wrap w-12/12 pt-4 gap-y-4 gap-x-4">
+            {blog.labels.map((label) => (
+              <span className="bg-gray-800 rounded-lg px-4 py-2 text-center text-blueGray-500 mr-4">
+                #{label.name}
+              </span>
+            ))}
+          </div>
+        )}
+        {/* <img
           src={blog.coverImage}
           alt={blog.title}
           className="w-12/12 mx-auto pt-4"
@@ -64,11 +58,11 @@ const BlogSlug = () => {
       </div>
       <hr className="border-gray-600" />
       <div
-        className="prose prose-dark max-w-screen-lg my-20 text-blueGray-500 mx-auto "
+        className="prose prose-dark max-w-screen-lg my-10 text-blueGray-500 mx-auto "
         dangerouslySetInnerHTML={{ __html: blog.html }}
       ></div>
       <div className="prose prose-dark max-w-screen-lg my-20 text-blueGray-500 mx-auto">
-        <div className="flex justify-between">
+        <div className="flex flex-wrap justify-between">
           <span>
             Reactions: {blog.reactionCount}
             {"  "}
@@ -79,7 +73,16 @@ const BlogSlug = () => {
           </span>
         </div>
         <hr />
-        <h2>Comments</h2>
+        <div className="flex flex-row flex-wrap gap-2 col-span-full justify-between items-center">
+          <h2 style={{ marginTop: "2.5rem" }}>Comments</h2>
+          <a
+            href={`${blog.url}#issuecomment-new`}
+            rel="external"
+            target="_blank"
+          >
+            Leave a new comment!
+          </a>
+        </div>
         {blog.comments.length != 0 ? (
           blog.comments.map((idx: number, comment: any) => {
             return (

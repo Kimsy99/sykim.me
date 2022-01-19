@@ -84,12 +84,6 @@ const Blogs = () => {
                   blog.title.toLowerCase().indexOf(search.toLowerCase()) > -1
               )
               .map((blog: Blog) => (
-                // <>
-                //   <h3 className="py-2 text-xl text-white">{blog.title}</h3>
-                //   <p className="text-blueGray-500">{blog.number}</p>
-                //   <p className="text-blueGray-500">{blog.createdAt}</p>
-                //   <p className="text-blueGray-500">{console.log(blog.body)}</p>
-                // </>
                 <Link
                   className="cursor-pointer"
                   // to={blog.slug}
@@ -103,7 +97,7 @@ const Blogs = () => {
                   // rel="noreferrer"
                 >
                   <div className="flex sm:pb-8 bg-gray-800 rounded-lg p-5 border-2 border-transparent transition duration-500 ease-in-out hover:border-yellow-500">
-                    <div className="flex justify-between items-center w-full">
+                    <div className="flex flex-wrap justify-between items-center w-full">
                       {/* <div className="w-full h-72 bg-gray-900 rounded-md flex justify-center	">
                       <img
                         src={blog.coverImage}
@@ -113,9 +107,9 @@ const Blogs = () => {
                     </div> */}
                       <h3 className="py-2 text-xl text-white">{blog.title}</h3>
                       <div className="text-blueGray-500 inline-flex  items-center">
-                        {blog.reactions.totalCount} ❤️
-                        {"    "} {"    "}
-                        <p className="w-32 text-left md:text-right">
+                        <p className="">{blog.reactions.totalCount} ❤️ </p>
+                        <span className="self-center mx-3 text-xs">•</span>
+                        <p className="text-right">
                           {blog.createdAt.split("T")[0]}
                         </p>
                       </div>
