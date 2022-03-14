@@ -14,26 +14,22 @@ import { Label } from "./types";
 export let loader: LoaderFunction = async (props: any) => {
   return getPost(props.params.slug);
 };
-
+export let meta: MetaFunction = ({ data }: { data: any }) => {
+  return {
+    ...getSocialMetas({
+      title: data.title,
+      description: data.frontmatter.description,
+      keywords:
+        data.frontmatter.slug.split("-").join(", ") +
+        ", blog, writing, sheng yong, kim, Kim, Sheng Yong",
+      url: `https://sykim.me/${data.frontmatter.slug}`,
+    }),
+  };
+};
 const BlogSlug = () => {
   let blog = useLoaderData();
-
   return (
     <div className="max-w-screen-lg mx-auto px-5 px-10vw">
-      <head>
-        <title>{blog.title}</title>
-        <meta property="og:title" content={blog.title} />
-        <meta name="image" content="https://www.sykim.me/img/kim-profile.png" />
-        <meta
-          name="og:image"
-          content="https://www.sykim.me/img/kim-profile.png"
-        />
-        <meta
-          property="og:url"
-          content={`https://sykim.me/blog/${blog.slug}`}
-        />
-        <meta property="og:type" content="website" />
-      </head>
       <div className="flex flex-col col-span-full space-y-2 lg:justify-between mb-10 mt-20 ">
         <h2 className="leading-tight text-3xl md:text-4xl text-white ">
           {blog.title}

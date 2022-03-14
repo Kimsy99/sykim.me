@@ -127,6 +127,7 @@ export async function getPost(slug: string) {
     comments: issue.comments.nodes,
     reactionCount: issue.reactions.totalCount,
     url: issue.url,
-    labels: issue.labels.nodes
+    labels: issue.labels.nodes,
+    frontmatter: issue.frontmatter
   }
 }
