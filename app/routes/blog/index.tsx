@@ -22,22 +22,6 @@ const Blogs = () => {
   const [search, setSearch] = React.useState("");
   return (
     <div className="max-w-screen-lg  mx-auto  px-5">
-      {/* <Head>
-      <title>Blogs by Kim Sheng Yong</title>
-      <meta
-        name="description"
-        content="Know more about what Kim's writings."
-      />
-      <meta property="og:title" content={`Blogs - Kim Sheng Yong`} />
-      <meta name="image" content="/img/kim-profile.png" />
-      <meta name="og:image" content="/img/kim-profile.png" />
-      <meta
-        property="og:description"
-        content={`Know more about what Kim's writings.`}
-      />
-      <meta property="og:url" content={`https://sykim.me/blog`} />
-      <meta property="og:type" content="website" />
-    </Head> */}
       <div className="flex flex-col col-span-full space-y-2 lg:justify-between my-20">
         <h2 className="leading-tight text-3xl md:text-4xl text-white ">
           My Writings
@@ -50,7 +34,6 @@ const Blogs = () => {
       <div>
         <div className="py-8">
           <div className="grid md:grid-cols-1 gap-8 grid-cols-1">
-            {/* <input placeholder="Search articles" /> */}
             <div className="relative w-full mb-4">
               <input
                 aria-label="Search articles"
@@ -86,34 +69,19 @@ const Blogs = () => {
               .map((blog: Blog) => (
                 <Link
                   className="cursor-pointer"
-                  // to={blog.slug}
-                  // to={`${blog.number}/${slugify(blog.title)}`}
-                  // to={`${blog.milestone.title}`}
-                  // to={`${blog.number}`}
-                  to={`${slugify(blog.title.toLowerCase())}`}
-                  // state={`${blog.number}`}
-                  // to={`${slugify(blog.title)}`}
+                  to={blog.frontmatter.slug}
                   key={blog.number}
-                  // rel="noreferrer"
                 >
                   <div className="flex sm:pb-8 bg-gray-800 rounded-lg p-5 border-2 border-transparent transition duration-500 ease-in-out hover:border-yellow-500">
                     <div className="flex flex-wrap justify-between items-center w-full">
-                      {/* <div className="w-full h-72 bg-gray-900 rounded-md flex justify-center	">
-                      <img
-                        src={blog.coverImage}
-                        alt={blog.title}
-                        className="rounded-md object-contain h-full max-h-96 object-center	"
-                      />
-                    </div> */}
                       <h3 className="py-2 text-xl text-white">{blog.title}</h3>
                       <div className="text-blueGray-500 inline-flex  items-center">
                         <p className="">{blog.reactions.totalCount} ❤️ </p>
                         <span className="self-center mx-3 text-xs">•</span>
                         <p className="text-right">
-                          {blog.createdAt.split("T")[0]}
+                          {blog.frontmatter.date.split("T")[0]}
                         </p>
                       </div>
-                      {/* <p className="text-blueGray-500">{blog.brief}</p> */}
                     </div>
                   </div>
                 </Link>

@@ -7,11 +7,11 @@ import proseStyles from "./styles/prose.css";
 import { getSocialMetas } from "../../../utils/seo";
 import { marked } from "marked";
 import formatDistance from "date-fns/formatDistance/index.js";
+import { Label } from "./types";
 // export let links: LinksFunction = () => {
 //   return [];
 // };
 export let loader: LoaderFunction = async (props: any) => {
-  // invariant(params.slug, "expected params.slug");
   return getPost(props.params.slug);
 };
 
@@ -43,18 +43,13 @@ const BlogSlug = () => {
         </h2>
         {blog?.labels.length != 0 && (
           <div className="flex flex-wrap w-12/12 pt-4 gap-y-4 gap-x-4">
-            {blog.labels.map((label) => (
+            {blog.labels.map((label: Label) => (
               <span className="bg-gray-800 rounded-lg px-4 py-2 text-center text-blueGray-500 mr-4">
                 #{label.name}
               </span>
             ))}
           </div>
         )}
-        {/* <img
-          src={blog.coverImage}
-          alt={blog.title}
-          className="w-12/12 mx-auto pt-4"
-        /> */}
       </div>
       <hr className="border-gray-600" />
       <div
@@ -118,12 +113,6 @@ const BlogSlug = () => {
                     </a>
                     {comment.author.login}
                   </div>
-                  {/* <Reactions
-                    ghMetadata={{
-                      issueUrl: comment.issue_url,
-                      reactions: comment.reactions,
-                    }}
-                  /> */}
                 </div>
                 <br />
               </div>

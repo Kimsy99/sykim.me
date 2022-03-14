@@ -16,7 +16,12 @@ export type Blog = {
   reactions: {
     totalCount: number
   }
-
+  frontmatter: {
+    title: string;
+    description: string;
+    date: any;
+    slug: string;
+  }
 };
 
 export type PostMarkdownAttributes = {
@@ -59,14 +64,17 @@ export async function getPosts() {
       }
     }
     `)
-  console.log(data.repository.issues.nodes[0])
-  return {posts: data.repository.issues.nodes}
+    // console.log("body-frontmatter: ", parseFrontMatter(data.repository.issues.nodes[0].body))
+  const posts = data.repository.issues.nodes.map(
+    (post: any) => {return {...post, frontmatter: parseFrontMatter(post.body).attributes, body: parseFrontMatter(post.body).body}}
+  ).sort((a: any, b: any) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
+  return {posts}
 }
 
 export async function getPost(slug: string) {
   console.log("slug: ", slug)
   const issueID: number = parseInt(slug);
-  const datas: any = await graphql(`{
+  let posts: any = await graphql(`{
     repository(name: "sykim.me", owner: "Kimsy99") {
       issues(first: 50) {
         nodes{
@@ -104,12 +112,15 @@ export async function getPost(slug: string) {
     authorization: `token ${TOKEN}`,
   },}
   )
-  const issue = datas.repository.issues.nodes.filter((issue: any) => slugify(issue.title.toLowerCase()) == slug)[0]
-  console.log("issues: ", datas)
-  console.log("issue: ", issue)
+  // parseFrontMatter(issue.body).attributes.slug
+  posts = posts.repository.issues.nodes.map(
+    (post: any) => {return {...post, frontmatter: parseFrontMatter(post.body).attributes, body: parseFrontMatter(post.body).body}}
+  )
+  console.log(posts[0])
+  const issue = posts.filter((issue: any) => issue.frontmatter.slug == slug)[0]
   let html = marked(issue.body)
   return {
-    slug: issue.number, 
+    slug: issue.frontmatter.slug, 
     html, 
     title:issue.title,
     date: issue.createdAt,
