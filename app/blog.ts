@@ -72,7 +72,6 @@ export async function getPosts() {
 }
 
 export async function getPost(slug: string) {
-  console.log("slug: ", slug)
   const issueID: number = parseInt(slug);
   let posts: any = await graphql(`{
     repository(name: "sykim.me", owner: "Kimsy99") {
@@ -116,7 +115,6 @@ export async function getPost(slug: string) {
   posts = posts.repository.issues.nodes.map(
     (post: any) => {return {...post, frontmatter: parseFrontMatter(post.body).attributes, body: parseFrontMatter(post.body).body}}
   )
-  console.log(posts[0])
   const issue = posts.filter((issue: any) => issue.frontmatter.slug == slug)[0]
   let html = marked(issue.body)
   return {

@@ -217,7 +217,6 @@ export function CatchBoundary() {
 }
 
 export function ErrorBoundary({ error }: { error: Error }) {
-  console.log(error);
   return (
     <Document title="Error! Something Went Wrong">
       <Layout>
