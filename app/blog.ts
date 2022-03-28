@@ -49,7 +49,7 @@ export async function getPosts() {
   
   const data: any = await request(`{
       repository(name: "sykim.me", owner: "Kimsy99") {
-        issues(first: 50,orderBy: {field: UPDATED_AT, direction: DESC}) {
+        issues(first: 50,filterBy: { labels:  ["published"]},orderBy: {field: UPDATED_AT, direction: DESC}) {
           nodes {
             title
             number
@@ -127,7 +127,7 @@ export async function getPost(slug: string) {
     comments: issue.comments.nodes,
     reactionCount: issue.reactions.totalCount,
     url: issue.url,
-    labels: issue.labels.nodes,
+    labels: issue.labels.nodes.filter((node: {name: string}) => node.name !== "published"),
     frontmatter: issue.frontmatter
   }
 }
