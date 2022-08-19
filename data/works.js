@@ -86,6 +86,14 @@ const projects = [
 ];
 const works = [
   {
+    url: "/img/works/coingecko.png",
+    name: "CoinGecko",
+    tags: ["Product Management"],
+    description:
+      "CoinGecko is the world’s largest independent cryptocurrency data aggregator with over 12,000+ different cryptoassets tracked across more than 500+ exchanges worldwide.",
+    link: "https://www.coingecko.com/",
+  },
+  {
     url: "/img/works/monsta-infinite.png",
     name: "Monsta Infinite",
     tags: ["typescript", "react-web3", "", "expressjs", "testing"],
