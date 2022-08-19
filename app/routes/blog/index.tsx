@@ -23,9 +23,9 @@ const Blogs = () => {
   return (
     <div className="max-w-screen-lg  mx-auto  px-5">
       <div className="flex flex-col col-span-full space-y-2 lg:justify-between my-20">
-        <h2 className="leading-tight text-3xl md:text-4xl text-white ">
+        <h1 className="leading-tight text-3xl md:text-4xl text-white ">
           My Writings
-        </h2>
+        </h1>
         <h2 className="leading-tight text-3xl md:text-4xl text-blueGray-500">
           My thoughts, experience and anything else
         </h2>

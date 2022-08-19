@@ -38,22 +38,22 @@ const Works = () => {
         <meta property="og:type" content="website" />
       </Head> */}
       <div className="flex flex-col col-span-full space-y-2 lg:justify-between my-20">
-        <h2 className="leading-tight text-3xl md:text-4xl text-white ">
+        <h1 className="leading-tight text-3xl md:text-4xl text-white ">
           My Works & Projects
-        </h2>
+        </h1>
         <h2 className="leading-tight text-3xl md:text-4xl text-blueGray-500">
           What i do for living and fun (sometimes)
         </h2>
       </div>
 
       <div>
-        <h2 className="mt-20 mb-10 text-2xl font-semibold text-white">Works</h2>
+        <h3 className="mt-20 mb-10 text-2xl font-semibold text-white">Works</h3>
         <WorkCard posts={works} />
       </div>
       <div>
-        <h2 className="mt-20 mb-10 text-2xl font-semibold text-white">
+        <h3 className="mt-20 mb-10 text-2xl font-semibold text-white">
           Projects
-        </h2>
+        </h3>
         <WorkCard posts={projects} />
       </div>
       <p className="text-center text-3xl text-white my-10">

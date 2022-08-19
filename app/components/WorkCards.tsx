@@ -20,6 +20,11 @@ const WorkCard = ({ posts }: props) => {
                 />
               </div>
               <h3 className="py-2 text-xl text-white">{post.name}</h3>
+              {post?.role && (
+                <p className="text-blueGray-500 pb-2">
+                  <i>Role: {post.role}</i>
+                </p>
+              )}
               <p className="text-blueGray-500">{post.description}</p>
             </div>
           </div>

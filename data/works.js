@@ -89,6 +89,7 @@ const works = [
     url: "/img/works/coingecko.png",
     name: "CoinGecko",
     tags: ["Product Management"],
+    role: "Associate Product Manager",
     description:
       "CoinGecko is the world’s largest independent cryptocurrency data aggregator with over 12,000+ different cryptoassets tracked across more than 500+ exchanges worldwide.",
     link: "https://www.coingecko.com/",
@@ -96,6 +97,7 @@ const works = [
   {
     url: "/img/works/monsta-infinite.png",
     name: "Monsta Infinite",
+    role: "Web3 Software Engineer (Contract)",
     tags: ["typescript", "react-web3", "", "expressjs", "testing"],
     description:
       "Monsta Infinite is an NFT breeding, battle, and building game that falls under the rapidly growing 'play-to-earn' and GameFi sector on the Binance Smart Chain. I am responsible in building the Monsta Marketplace and also Monsta Wallet which are used by more than 100,000 users. Technologies: ReactJS Web3, Typescript, GraphQL, Metamask, Solidity.",
