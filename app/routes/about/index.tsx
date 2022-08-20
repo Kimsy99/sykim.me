@@ -15,19 +15,6 @@ export let meta: MetaFunction = () => {
 const About = () => {
   return (
     <div className="max-w-screen-lg my-20 text-blueGray-500 mx-auto about px-10vw">
-      {/* <Head>
-        <title>About Kim Sheng Yong</title>
-        <meta name="description" content="Get to know Kim Sheng Yong" />
-        <meta property="og:title" content={`About Me - Kim Sheng Yong`} />
-        <meta
-          property="og:description"
-          content={`Get to know about Kim Sheng Yong`}
-        />
-        <meta name="image" content="/img/kim-profile.png" />
-        <meta name="og:image" content="/img/kim-profile.png" />
-        <meta property="og:url" content={`https://sykim.me/about`} />
-        <meta property="og:type" content="website" />
-      </Head> */}
       <h1 className="text-2xl  text-white">
         Hey, I am <span className="underline-yellow">Kim Sheng Yong</span>
       </h1>
