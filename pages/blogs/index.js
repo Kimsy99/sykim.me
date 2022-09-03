@@ -277,7 +277,7 @@ export default function Talent({ list }) {
 }
 
 //notion API
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
   // console.log("getPosts: ", await getPosts()) 
   const res = (await getPosts())
