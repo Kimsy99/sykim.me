@@ -36,13 +36,13 @@ export default function ContactContent({ inModal }) {
       <div className={styles.row}>
         <div className={styles.stack}>
           <p className={styles.mainText}>Email</p>
-          <p className={styles.subText}>hi.sj.zhang@gmail.com</p>
+          <p className={styles.subText}>kimshengyong[at]gmail.com</p>
         </div>
 
         <div className={styles.buttonPair}>
           <a
             className={util.button + " " + styles.rightBorder}
-            href="mailto:hi.sj.zhang@gmail.com"
+            href="mailto:kimshengyong@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -81,21 +81,13 @@ export default function ContactContent({ inModal }) {
       </div>
       <div className={styles.row}>
         <div className={styles.stack}>
-          <p className={styles.mainText}>Book a time</p>
-          <p className={styles.subText}>
-            {"If you want advice, it's easier to chat live"}
-          </p>
-        </div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.stack}>
           <p className={styles.mainText}>Stay in touch</p>
           <p className={styles.subText}>{"I'm more active on twitter"}</p>
         </div>
         <div className={styles.flexRow}>
           <a
             className={styles.textButton}
-            href="https://twitter.com/sjzhang_"
+            href="https://twitter.com/sykim_99"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -111,7 +103,7 @@ export default function ContactContent({ inModal }) {
           </a>
           <a
             className={styles.textButton}
-            href="https://www.linkedin.com/in/s-j-zhang/"
+            href="https://www.linkedin.com/in/kimsy99/"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -159,7 +159,7 @@ export default function About() {
                 date="2022–Now"
                 title="Product at CoinGecko"
                 url={"https://coingecko.com"}
-                content={"-----"}
+                content={"Building products @CoinGecko 💪"}
               />
               <ExpTile
                 date="2020-22"
@@ -181,34 +181,11 @@ export default function About() {
                 date="2021"
                 title="Product Engineer Intern at Tinkerve LLP"
                 url={"https://tinkerve.com"}
-                content={"Doing some stuff there."}
+                content={`Doing some stuff there. Mainly <a href="https://getdwa.com/" target="_blank" rel="noopener noreferrer">Digital Workspace Assistant</a>.`}
               />
-              <ExpTile
-                date="2017–18"
-                title="Web/Digital Design at Fashion Company"
-                url={"https://illesteva.com"}
-                content={
-                  "Led the website redesign and relaunched the e-commerce platform on Shopify. Supported social graphics and ran all email marketing efforts."
-                }
-              />
-              <ExpTile
-                date="2015–17"
-                title="Co-Founder at Fashion Company"
-                content={
-                  "Targeted the affordable luxury accessory market. Got some press, sales, and traction but ultimately closed it down. The site I built was featured as a Squarespace template example, which accidentally pushed me toward web and digital design."
-                }
-              />
-              <ExpTile
-                date="2012–20"
-                title={
-                  "Freelance Designer & Intern at multiple Fashion Companies"
-                }
-                content={
-                  "Did graphic design freelance gigs, while doing the most ridiculous intern chores at different New York fashion companies."
-                }
-              />
+            
             </div>
-            <div className={util.read}>
+            {/* <div className={util.read}>
               <h2>This Site</h2>
 
               <p>
@@ -298,7 +275,7 @@ export default function About() {
                 made light/dark-mode management easy.
               </p>
               <h2 style={{ margin: "4rem 0rem -0.5rem 0rem" }}>Contact</h2>
-            </div>
+            </div> */}
             <div className={util.inset}>
               <ContactContent inModal="false" />
             </div>

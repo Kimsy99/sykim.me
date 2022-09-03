@@ -1,4 +1,4 @@
-import styles from ".//expTile.module.css";
+import styles from "./expTile.module.css";
 import util from "../../styles/util.module.css";
 
 export default function ExpTile({ title, content, url, date }) {
@@ -21,7 +21,7 @@ export default function ExpTile({ title, content, url, date }) {
         ) : (
           <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
         )}
-        <p className={styles.content}>{content}</p>
+        <p className={styles.content} dangerouslySetInnerHTML={{ __html:`${content}`}} ></p>
       </div>
     </div>
   );

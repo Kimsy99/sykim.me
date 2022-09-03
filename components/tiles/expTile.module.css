@@ -16,6 +16,9 @@
   margin-top: 8px;
   line-height: 1.5;
 }
+.content a{
+ text-decoration: underline;
+}
 .date {
   width: 68px;
   font-size: var(--font-m);
