@@ -27,6 +27,12 @@ export default function Menu() {
             label="Writings"
             shortcut="4"
           />
+          <NavLink
+            svg="reading"
+            href="/reading-list"
+            label="Reading List"
+            shortcut="5"
+          />
           {/* <NavLink
             svg="reading"
             href="/reading-list"
@@ -47,10 +53,10 @@ export default function Menu() {
             shortcut="8"
           /> */}
           <p className={styles.divider}>Stay in touch</p>
-          <Contact svg="chat" label="Contact" shortcut="9" />
+          <Contact svg="chat" label="Contact" shortcut="6" />
           <NavLink
             svg="twitter"
-            href="https://twitter.com/sjzhang_"
+            href="https://twitter.com/sykim_99"
             label="Twitter"
             external="true"
           />

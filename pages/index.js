@@ -35,7 +35,6 @@ export default function Home({ list }) {
           <h1 className={util.header}>Hi, I am Kim</h1>
           <p className={util.description}>{description}</p>
           <ul className={util.list}>
-            {/* {console.log("list: ", list)} */}
             {list.map((item) => (
               <Tile
                 key={item.id}

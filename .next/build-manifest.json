@@ -30,15 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/about.js"
     ],
-    "/blogs": [
+    "/projects": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/blogs.js"
+      "static/chunks/pages/projects.js"
     ],
-    "/blogs/[id]": [
+    "/reading-list": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/blogs/[id].js"
+      "static/chunks/pages/reading-list.js"
     ]
   },
   "ampFirstPages": []

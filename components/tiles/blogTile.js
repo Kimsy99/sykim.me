@@ -8,8 +8,9 @@ import Link from "next/link";
 export default function BlogTile({ title, url, date, fav, tags, desc }) {
   return (
     <div className={styles.person}>
-      <a href={url} className={styles.container}>
+      <a className={styles.container}>
         {fav ? (
+      <Link href={url} >
           <Tooltip.Provider delayDuration={300}>
             <Tooltip.Root>
               <Tooltip.Trigger asChild>
@@ -37,6 +38,7 @@ export default function BlogTile({ title, url, date, fav, tags, desc }) {
               </Tooltip.Content>
             </Tooltip.Root>
           </Tooltip.Provider>
+          </Link>
         ) : null}
         {/* <div className={styles.icon}>
             <Image
@@ -51,7 +53,7 @@ export default function BlogTile({ title, url, date, fav, tags, desc }) {
               alt="url favicon"
             ></Image>
           </div> */}
-
+      <Link href={url}>
         <div className={styles.right}>
           <div className={styles.stack}>
             <div>
@@ -74,6 +76,7 @@ export default function BlogTile({ title, url, date, fav, tags, desc }) {
               : null}
           </div>
         </div>
+      </Link>
       </a>
     </div>
   );
