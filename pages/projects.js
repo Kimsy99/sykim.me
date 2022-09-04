@@ -21,7 +21,7 @@ export default function Projects() {
   }, []);
 
   //page header and in-page description
-  const description = "Projects/Products I had been working on for the past years. ";
+  const description = "Projects/Products I worked on for the past years. ";
 
   return (
     <>
@@ -36,18 +36,7 @@ export default function Projects() {
         <div className={util.pageColumn}>
           <h1 className={util.header}>Projects</h1>
           <p className={util.description}>
-            {"Since mid 2020, I’ve focused my energy on "}
-            <a
-              href="https://withcompound.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={util.externalLink}
-            >
-              Compound
-            </a>
-            {
-              ". Before that, I worked on a few personal coding projects, freelance and in-house design jobs. Between 2018 and 2020 I worked on a variety of hardware, installations, AR and creative coding sketches."
-            }
+          Projects/Products I worked on for the past years. 
           </p>
           <ul className={util.list}>
             {/* <ProjectTile
