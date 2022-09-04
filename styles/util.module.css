@@ -589,7 +589,8 @@
     margin-left: 0rem;
     overflow: auto;
     margin: 0rem;
-    height: auto;
+    /* height: auto; */
+    height: 100vh;
   }
   .header {
     font-size: 2.5rem;

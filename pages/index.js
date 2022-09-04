@@ -30,19 +30,6 @@ export default function Home({ list }) {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" type="image/gif" />
       </Head>{" "}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'GA_MEASUREMENT_ID');
-        `}
-      </Script>
       <main className={util.page} id="recentsPage">
         <div className={util.pageColumn}>
           <h1 className={util.header}>Hi, I am Kim</h1>

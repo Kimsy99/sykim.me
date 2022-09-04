@@ -282,14 +282,14 @@ export default function Talent({ list }) {
 // export async function getStaticPaths() {
 //   return {fallback: false}
 // }
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = (await getPosts())
 
   return {
     props: {
       // list: response.results,
-      list: JSON.parse(JSON.stringify(res.posts)),
+      list: JSON.parse(JSON.stringify(res.posts))
     },
-    // revalidate: 60,
+    revalidate: 60,
   };
 }

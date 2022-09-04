@@ -65,6 +65,7 @@ html {
   /* Remap your colors for dark mode */
   --appbg: rgb(26, 26, 26);
   --bg: rgb(16, 16, 16);
+  /* --bg: hsl(200, 7.0%, 8.8%); */
   --bgSticky: rgba(16, 16, 16, 0.746);
 
   --menu: rgba(10, 10, 10, 0.8);

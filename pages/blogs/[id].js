@@ -212,48 +212,25 @@ export default function Post({ post }) {
   );
 }
 
-export const getStaticPaths = async () => {
-  const databaseId = process.env.NOTION_BLOGS_ID;
-  const database = await getDatabase(databaseId);
-  return {
-    paths: database.map((page) => ({
-      params: {
-        id: page.id,
-        slug: page.properties.Slug.rich_text[0].plain_text,
-      },
-    })),
-    fallback: true,
-  };
-};
+// export const getStaticPaths = async () => {
+//   const databaseId = process.env.NOTION_BLOGS_ID;
+//   const database = await getDatabase(databaseId);
+//   return {
+//     paths: database.map((page) => ({
+//       params: {
+//         id: page.id,
 
-export const getStaticProps = async (context) => {
+//       },
+//     })),
+//     fallback: true,
+//   };
+// };
+
+export const getServerSideProps = async (context) => {
   const { id } = context.params;
-  // console.log("id: ", id);
-  // const page = await getPage(id);
-  // const blocks = await getBlocks(id);
+
   const post = await getPost(id)
 
-  // Retrieve block children for nested blocks (one level deep), for example toggle blocks
-  // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
-  // const childBlocks = await Promise.all(
-  //   blocks
-  //     .filter((block) => block.has_children)
-  //     .map(async (block) => {
-  //       return {
-  //         id: block.id,
-  //         children: await getBlocks(block.id),
-  //       };
-  //     })
-  // );
-  // const blocksWithChildren = blocks.map((block) => {
-  //   // Add child blocks if the block should contain children but none exists
-  //   if (block.has_children && !block[block.type].children) {
-  //     block[block.type]["children"] = childBlocks.find(
-  //       (x) => x.id === block.id
-  //     )?.children;
-  //   }
-  //   return block;
-  // });
 
   return {
     props: {
@@ -261,6 +238,5 @@ export const getStaticProps = async (context) => {
       // blocks: blocksWithChildren,
       post: JSON.parse(JSON.stringify(post))
     },
-    revalidate: 1,
   };
 };

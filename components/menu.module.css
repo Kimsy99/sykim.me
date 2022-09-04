@@ -28,7 +28,7 @@
     .container {
       padding: 0.375rem 1.5rem 0.5rem 0.375rem;
       width: 100%;
-      justify-content: flex-start;
+      justify-content: center;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -38,8 +38,8 @@
       overflow-y: hidden;
       position: fixed;
       height: 60px;
-      top: 0px;
-      bottom: auto;
+      top: auto;
+      bottom: 0px;
       border-top: 1px solid var(--linkContainerBorder);
       margin: 0px;
       background-color: var(--appbg);
