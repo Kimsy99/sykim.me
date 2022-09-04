@@ -21,8 +21,8 @@ export default function Projects() {
   }, []);
 
   //page header and in-page description
-  const description =
-    "Since mid 2020, I’ve focused my energy on Compound. Before that, I worked on a few personal coding projects, freelance and in-house design jobs. Between 2018 and 2020 I worked on a variety of hardware, installations, AR and creative coding sketches.";
+  const description = "Projects/Products I had been working on for the past years. ";
+
   return (
     <>
       <Head>

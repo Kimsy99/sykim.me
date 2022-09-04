@@ -1,5 +1,12 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/projects": "pages/projects.html",
+  "/blogs": "pages/blogs.js",
+  "/blogs/[id]": "pages/blogs/[id].js",
+  "/": "pages/index.js",
+  "/reading-list": "pages/reading-list.js",
+  "/about": "pages/about.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
