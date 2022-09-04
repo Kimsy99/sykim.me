@@ -195,6 +195,13 @@
   margin-bottom: 0.75rem;
   transition: color 0.25s ease;
 }
+.headerSecondary {
+  font-size: 1.25rem;
+  line-height: 170%;
+  font-weight: 550;
+  color: var(--gray12);
+  transition: color 0.25s ease;
+}
 .read h3 {
   margin-top: 2rem;
   font-size: 1rem;
@@ -326,6 +333,14 @@
   background-color: var(--bgSticky);
   backdrop-filter: blur(10px);
   transition: background-color 0.2s ease;
+}
+.spaceBetween {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  align-items: center;
 }
 .emptyState {
   padding: 3rem;

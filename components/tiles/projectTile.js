@@ -1,4 +1,4 @@
-import styles from ".//projectTile.module.css";
+import styles from "./projectTile.module.css";
 import Image from "next/image";
 import util from "../../styles/util.module.css";
 import Link from "next/link";

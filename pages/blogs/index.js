@@ -11,7 +11,7 @@ import { getPosts, getSortedPostsData } from "../../lib/posts";
 export default function Talent({ list }) {
   
   const description =
-    "Incredible design talent that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
+    "Trying to write more. Let's see will I write more after revamp this website lol.";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
