@@ -10,7 +10,6 @@ import {aboutContent} from "../markdown/about.md"
 // const aboutContent = require("../markdown/about.md")
 
 export default function About({content}) {
-  console.log("content: ", content)
   useEffect(() => {
     let thisPage = document.querySelector("#aboutPage");
     let top = sessionStorage.getItem("about-scroll");
