@@ -9,6 +9,7 @@ import Settings from "../../components/settings.component";
 import { getPosts, getSortedPostsData } from "../../lib/posts";
 
 export default function Talent({ list }) {
+  
   const description =
     "Incredible design talent that I’ve collaborated with or keeping an eye on. The list focuses on ICs and agencies with public bodies of work. It excludes influencial leaders and talented ICs (many I personally know) that kept their work private.";
 
@@ -157,7 +158,9 @@ export default function Talent({ list }) {
 
     }
   }, [filter, fav]);
-
+  if(!list) {
+    return <div></div>
+  }
   return (
     <>
       <Head>
@@ -276,38 +279,17 @@ export default function Talent({ list }) {
   );
 }
 
-//notion API
+// export async function getStaticPaths() {
+//   return {fallback: false}
+// }
 export async function getServerSideProps() {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  // console.log("getPosts: ", await getPosts()) 
   const res = (await getPosts())
-  // let temp123 = (await getPosts()).posts[0].frontmatter
-  // console.log("res: ", res)
-  const response = await notion.databases.query({
-    database_id: process.env.NOTION_BLOGS_ID,
-    filter: {
-      and: [
-        {
-          property: "Display",
-          checkbox: {
-            equals: true,
-          },
-        },
-      ],
-    },
-    sorts: [
-      {
-        property: "Time",
-        direction: "descending",
-      },
-    ],
-  });
 
   return {
     props: {
       // list: response.results,
       list: JSON.parse(JSON.stringify(res.posts)),
     },
-    revalidate: 60,
+    // revalidate: 60,
   };
 }

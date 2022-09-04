@@ -35,6 +35,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/about.js"
     ],
+    "/blogs": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/blogs.js"
+    ],
     "/blogs/[id]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

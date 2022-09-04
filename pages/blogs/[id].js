@@ -11,7 +11,6 @@ export const Text = ({ text, id }) => {
   if (!text) {
     return null;
   }
-  console.log("text: ", text);
   return text.map((value) => {
     const {
       annotations: { bold, code, color, italic, strikethrough, underline },
@@ -51,7 +50,6 @@ const renderNestedList = (block) => {
 const renderBlock = (block) => {
   const { type, id } = block;
   const value = block[type];
-  console.log("value: ", value);
   switch (type) {
     case "paragraph":
       return (
@@ -234,7 +232,6 @@ export const getStaticProps = async (context) => {
   // const page = await getPage(id);
   // const blocks = await getBlocks(id);
   const post = await getPost(id)
-  console.log("post: ", post)
 
   // Retrieve block children for nested blocks (one level deep), for example toggle blocks
   // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
