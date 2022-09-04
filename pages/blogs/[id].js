@@ -194,7 +194,7 @@ export default function Post({ post }) {
               : null}
           </div>
           <div className={util.divider}></div>
-          <section className={util.read}>
+          <section style={{marginTop: '3rem'}}>
             {/* {blocks.map((block) => (
               <Fragment key={block.id}>{renderBlock(block)}</Fragment>
             ))} */}
