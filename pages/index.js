@@ -74,7 +74,6 @@ export default function Home({ list }) {
 //notion API
 export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  console.log("notion: ", notion);
   const response = await notion.databases.query({
     database_id: process.env.NOTION_RECENTS_ID,
     filter: {
