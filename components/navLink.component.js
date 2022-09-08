@@ -68,8 +68,8 @@ export default function NavLink({ svg, label, href, shortcut, external }) {
           <Tooltip.Provider delayDuration={500}>
             <Tooltip.Root>
               <Tooltip.Trigger asChild>
-                <div className={styles.shortcut}>
-                  <span className={styles.shortcutText}>{shortcut}</span>
+                <div className={styles.shortcut} aria-current={ariaCurrent}>
+                  <span className={styles.shortcutText} >{shortcut}</span>
                 </div>
               </Tooltip.Trigger>
 

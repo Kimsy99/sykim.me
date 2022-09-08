@@ -55,6 +55,20 @@
   font-size: 11px;
   color: var(--tabText);
 }
+.shortcut[aria-current="page"] {
+  border-radius: 3px;
+  width: 16px;
+  height: 16px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: #FF5719;
+}
+.shortcut[aria-current="page"] span {
+  color: white;
+}
 .logoIcon {
   border-radius: 3.5px;
   width: 16px;
