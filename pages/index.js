@@ -38,8 +38,8 @@ export default function Home({ list,favArticles,latestBlogs }) {
           <p className={util.description}>{description}</p>
           <div className={util.divider}></div>
           <div className={util.spaceBetween}>
-            <h2 className={util.headerSecondary}>My Favourite Reads</h2>
-            <Link href="/reading-list"><a className={util.externalLink + " " + util.description}>Read More</a></Link>
+            <h2 className={util.headerSecondary}>Recent Favourite Reads</h2>
+            <Link href="/reading-list"><a className={util.internalLink + " " + util.description}>Read More →</a></Link>
           </div>
           <div>
           {favArticles ? (
@@ -80,8 +80,8 @@ export default function Home({ list,favArticles,latestBlogs }) {
             ))} */}
           </div>
           <div className={util.spaceBetween}>
-            <h2 className={util.headerSecondary}>My Latest Writings</h2>
-            <Link href="/blogs"><a className={util.externalLink + " " + util.description}>Read More</a></Link>
+            <h2 className={util.headerSecondary}>Latest Writings</h2>
+            <Link href="/blogs"><a className={util.internalLink + " " + util.description}>Read More →</a></Link>
           </div>
           <div>
           {latestBlogs ? (

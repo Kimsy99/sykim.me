@@ -10,9 +10,8 @@ export default function Menu() {
   return (
     <div className={styles.container}>
       <div className={styles.upper}>
-        <Link href="/">
-          <img  src="/logo/kim.svg" style={{height: "2.5rem"}}/>
-        </Link>
+        {/* <img className={util.siteTitle} src="/logo/kim.svg" alt="Kim" style={{height: "2.5rem"}}/> */}
+        <div className={util.siteTitle} alt="Kim" style={{height: "3.5rem"}}/>
         <nav className={styles.nav}>
           <NavLink svg="recents" href="/" label="Home" shortcut="1" />
           <NavLink svg="about" href="/about" label="About" shortcut="2" />

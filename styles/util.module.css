@@ -10,7 +10,7 @@
   order: 1;
   flex-grow: 1;
   margin-left: 16rem;
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   overflow: auto;
   transition: background-color 0.2s ease;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.015);
@@ -107,7 +107,7 @@
   font-weight: 300;
 }
 
-.internalLink:after {
+/* .internalLink:after {
   display: inline-block;
   padding: 0px 0px 0px 0px;
   content: "→";
@@ -119,7 +119,7 @@
   font-size: 15px;
   margin-left: 2.5px;
   font-weight: 300;
-}
+} */
 .externalLink:hover,
 .internalLink:hover {
   background-color: var(--gray4);
@@ -130,11 +130,18 @@
   font-weight: 530;
   font-size: 15px;
   /* height: 15px; */
-  margin: 1.25rem 0rem 1.25rem 1rem;
   text-transform: uppercase;
   letter-spacing: 0.25px;
   transition: color 0.2s ease;
+  background-color: var(--menuLabel);
+  -webkit-mask: url("../public/logo/kim.svg") no-repeat center;
+  mask: url("../public/logo/kim.svg") no-repeat center;
+  mask-size: 6.5rem;
+  mask-position: 0% 50%;
 }
+/* .siteTitle path {
+  fill: var(--menuLabel);
+} */
 .list {
   padding: 0px;
   margin-top: 3rem;
@@ -286,7 +293,7 @@
   transition: color 0.25s ease;
 }
 .divider {
-  border-top: 1px solid var(--gray3);
+  border-top: 1px solid var(--gray6);
   margin: 3rem 0rem -1rem;
   transition: border 0.25s ease;
 }
@@ -305,7 +312,7 @@
 .settingButton {
   margin-right: 0px;
   display: flex;
-  align-items: center;
+align-items: center;
   justify-content: center;
   width: 26px;
   height: 26px;
@@ -330,7 +337,7 @@
   padding: 8px 0px;
   top: -34px;
   z-index: 2;
-  background-color: var(--bgSticky);
+  /* background-color: var(--bgSticky); */
   backdrop-filter: blur(10px);
   transition: background-color 0.2s ease;
 }

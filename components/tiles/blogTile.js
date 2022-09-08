@@ -58,7 +58,7 @@ export default function BlogTile({ title, url, date, fav, tags, desc }) {
           <div className={styles.stack}>
             <div>
               <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
-              <span className={styles.externalIcon}>↗</span>
+              <span className={styles.internalIcon}>→</span>
             </div>
 
             <p className={styles.url + " " + util.hiddenOnMobile}>{desc}</p>

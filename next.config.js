@@ -10,4 +10,23 @@ module.exports = {
 
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog',
+        destination: '/blogs',
+        permanent: true,
+      },
+      {
+        source: '/work',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/skill',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }
