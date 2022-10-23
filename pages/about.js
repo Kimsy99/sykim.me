@@ -22,20 +22,6 @@ export default function About({content}) {
     thisPage.addEventListener("scroll", handleScroll);
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
-  // let [ content, setContent] = useState("");
-  // static async loadGetInitialProps
-  // const aboutContent = require("../markdown/about.md")
-  // useEffect(()=> {
-  //   fetch(aboutContent)
-  //     .then((res) => {
-  //       console.log("res: ",res)
-  //       return res.text()})
-  //     .then((md) => {
-  //      let mdToHTML = marked(md)
-  //      console.log("content:", mdToHTML)
-  //       setContent(mdToHTML)
-  //     })
-  // }, [])
   const description =
     "A summary of me, my interests, my design career, and why/how this site was built.";
   return (
@@ -44,7 +30,7 @@ export default function About({content}) {
         <title>Kim · About</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
-        <meta property="og:image" content="https://www.sj.land/og/index.png" />
+        <meta property="og:image" content="https://www.sykim.me/og/index.png" />
       </Head>
       <main className={util.page} id="aboutPage">
         <div className={util.pageColumn}>
@@ -86,28 +72,19 @@ export default function About({content}) {
               />
             
             </div>
-            {/* <div className={util.read}>
+            <div className={util.read}>
               <h2>This Site</h2>
 
               <p>
-                This site was initially built in Apr 2022 over 2 weekends. I
-                built it for 2 reasons:
+                This site was initially built in Sep 2022 over 1/2 weekends. Forked from <a
+                  href="https://nextjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={util.normalLink}
+                >
+                 sj.land 
+                </a>. 
               </p>
-              <ol
-                type="1"
-                start="1"
-                style={{ padding: "0rem 0rem 0rem 1.25rem" }}
-              >
-                <li style={{ marginBottom: "0.5rem" }}>
-                  Keep myself accountable with my investments and learnings.
-                  Sharing these in public gives me another level of rigor.
-                </li>
-                <li style={{ marginBottom: "0.5rem" }}>
-                  Keep myself engaged with the latest stacks. Iterating on my
-                  personal site gives me an opportunity to try new libraries and
-                  frameworks.
-                </li>
-              </ol>
 
               <p>
                 This site is built with{" "}
@@ -128,7 +105,7 @@ export default function About({content}) {
                 >
                   Vercel
                 </a>
-                . Content is managed in{" "}
+                . Content (expect blogs) is managed in{" "}
                 <a
                   href="http://notion.com/"
                   target="_blank"
@@ -156,6 +133,12 @@ export default function About({content}) {
                   regenerated
                 </a>{" "}
                 at server-side on demand, without manual redeployment.{" "}
+                Blog posts are written in GitHub Issue as CMS for hosting blog content. Blog posts content are loaded to /blogs at server-side using Github <a
+                  href="https://docs.github.com/en/graphql"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={util.externalLink}
+                >GraphQL API</a>.
                 <a
                   href="https://www.radix-ui.com/"
                   target="_blank"
@@ -176,7 +159,7 @@ export default function About({content}) {
                 made light/dark-mode management easy.
               </p>
               <h2 style={{ margin: "4rem 0rem -0.5rem 0rem" }}>Contact</h2>
-            </div> */}
+            </div>
             <div className={util.inset}>
               <ContactContent inModal="false" />
             </div>
@@ -192,7 +175,6 @@ export async function getStaticProps() {
   renderer.link = ( href, title, text ) => href.includes("http") ? `<a target="_blank" rel="noopener noreferrer" href="${ href }"">${ text }</a>` : `<a href="${ href }">${ text }</a>`;
   return {
     props: {
-      // list: response.results,
       content: marked(content.default, {renderer})
     }
   };

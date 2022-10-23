@@ -29,7 +29,7 @@ export default function Projects() {
         <title>{"Kim's Projects"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
-        <meta property="og:image" content="https://www.sj.land/og/index.png" />
+        <meta property="og:image" content="https://www.sykim.me/og/index.png" />
       </Head>
 
       <main id="projectsPage" className={util.page}>
@@ -205,13 +205,14 @@ export default function Projects() {
               date="2022-2-1"
             />
             <ProjectTile
-              image="monsta-infinite"
+              image="getdwa"
               title="Digital Workspace Assistant"
               content={
-                "Develop and maintain Digital Workspace Assistant that allow user to access workspace through chat based application. Technologies: Typescript, MongoDB, ExpressJS, ReactJS, NodeJS, Redux, React-testing-library, Mocha, Chai, Jenkins."
+                "Develop and maintain Digital Workspace Assistant that allow user to access workspace through chat based application. Integrated system with Telegram API for users to interact with the system through Telegram Bots. Developed a Role based System for authorization in the system and involved in integrating 'Flow Builder', which is the main core logic for the product. Technologies: Typescript, MongoDB, ExpressJS, ReactJS, NodeJS, Redux, React-testing-library, Mocha, Chai, Jenkins."
               }
               type="Web · Intern"
               date="2022-2-1"
+              url={"https://getdwa.com/"}
             />
             <ProjectTile
               image="monsta-infinite"

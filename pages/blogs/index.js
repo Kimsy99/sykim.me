@@ -167,7 +167,7 @@ export default function Talent({ list }) {
         <title>{"Kim's Writings"}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" />{" "}
-        <meta property="og:image" content="https://www.sj.land/og/index.png" />
+        <meta property="og:image" content="https://www.sykim.me/og/index.png" />
       </Head>
       {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"

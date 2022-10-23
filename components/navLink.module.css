@@ -51,6 +51,7 @@
   align-items: center;
 }
 .shortcutText {
+  font-family: monospace;
   font-weight: 390;
   font-size: 11px;
   color: var(--tabText);

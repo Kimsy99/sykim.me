@@ -31,6 +31,7 @@ export default function Home({ list,favArticles,latestBlogs }) {
         <title>Kim · Home</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.gif" type="image/gif" />
+        <meta property="og:image" content="https://www.sykim.me/og/index.png" />
       </Head>{" "}
       <main className={util.page} id="recentsPage">
         <div className={util.pageColumn}>

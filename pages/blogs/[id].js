@@ -171,6 +171,7 @@ export default function Post({ post }) {
       <Head>
         <title>{post.title}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="https://www.sykim.me/og/index.png" />
       </Head>
 
       <article className={util.page}>
