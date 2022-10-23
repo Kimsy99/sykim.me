@@ -74,7 +74,7 @@
 
 @media (max-width: 700px) {
   .tabs {
-    display: none;
+    /* display: none; */
     transform: scale(1.15);
     margin-left: 2rem;
     margin-right: 2rem;
