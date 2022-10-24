@@ -235,7 +235,7 @@ export default function Talent({ list }) {
                     date={link.createdAt.toString()}
                     fav={link.frontmatter.fav}
                     tags={link.frontmatter.labels}
-                    desc={"test"}
+                    desc={link.frontmatter.description}
                     // notableUrl={
                     //   link.properties.NotableUrl.url == null
                     //     ? null

@@ -100,7 +100,7 @@ export default function Home({ list,favArticles,latestBlogs }) {
                     date={link.createdAt.toString()}
                     fav={link.frontmatter.fav}
                     tags={link.frontmatter.labels}
-                    desc={"test"}
+                    desc={link.frontmatter.description}
                   />
                 ))
               )

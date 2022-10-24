@@ -60,7 +60,7 @@ export default function BlogTile({ title, url, date, fav, tags, desc }) {
               <h3 className={util.tileTitle + " " + styles.inline}>{title}</h3>
               <span className={styles.internalIcon}>→</span>
             </div>
-
+            {console.log("desc:", desc)}
             <p className={styles.url + " " + util.hiddenOnMobile}>{desc}</p>
           </div>
           <div className={util.tags + " " + util.flexRow}>

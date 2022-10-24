@@ -77,13 +77,21 @@ export default function About({content}) {
 
               <p>
                 This site was initially built in Sep 2022 over 1/2 weekends. Forked from <a
-                  href="https://nextjs.org/"
+                  href="https://www.sj.land/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={util.normalLink}
                 >
                  sj.land 
-                </a>. 
+                </a> and inspired by <a
+                  href="https://rauno.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={util.normalLink}
+                >
+                 rauno.me 
+                </a> 
+
               </p>
 
               <p>
