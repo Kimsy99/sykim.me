@@ -14,29 +14,7 @@ export default function Tile({
 }) {
   return (
     <div className={styles.container}>
-      {/* <div className={styles.left}>
-        {internalUrl ? (
-          <Image
-            className={styles.icon}
-            priority
-            // unoptimized
-            src={"/recents/" + internalUrl + ".png"}
-            height={28}
-            width={28}
-            alt={title}
-          />
-        ) : (
-          <Image
-            className={styles.icon}
-            priority
-            // unoptimized
-            src={logoUrl}
-            height={28}
-            width={28}
-            alt={title}
-          />
-        )}
-      </div> */}
+   
 
       <div className={styles.right}>
         <div className={styles.stack}>

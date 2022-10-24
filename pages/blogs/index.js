@@ -11,7 +11,7 @@ import { getPosts, getSortedPostsData } from "../../lib/posts";
 export default function Talent({ list }) {
   
   const description =
-    "Trying to write more. Let's see will I write more after revamp this website lol.";
+    "Collection of my musings. (Trying to write more. Let's see will I write more after revamping this website lol)";
 
   //filtering logic depends on query params
   //if no query we assume the section is "recently added" and fav setting is "false"
@@ -169,19 +169,6 @@ export default function Talent({ list }) {
         <link rel="icon" href="/favicon.gif" />{" "}
         <meta property="og:image" content="https://www.sykim.me/og/index.png" />
       </Head>
-      {/* <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-T2CWC86NTK"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'GA_MEASUREMENT_ID');
-        `}
-      </Script> */}
 
       <main className={util.page} id="blogPage">
         <div className={util.pageColumn}>
@@ -230,43 +217,12 @@ export default function Talent({ list }) {
                   <BlogTile
                     key={id}
                     title={link.title}
-                    // url={`/blogs/${link.properties.Slug.rich_text[0].plain_text}`}
                     url={`/blogs/${link.frontmatter.slug}`}
                     date={link.createdAt.toString()}
                     fav={link.frontmatter.fav}
                     tags={link.frontmatter.labels}
                     desc={link.frontmatter.description}
-                    // notableUrl={
-                    //   link.properties.NotableUrl.url == null
-                    //     ? null
-                    //     : link.properties.NotableUrl.url
-                    // }
-                    // notableTitle={
-                    //   link.properties.NotableTitle.rich_text[0] == undefined
-                    //     ? null
-                    //     : link.properties.NotableTitle.rich_text[0].plain_text
-                    // }
                   />
-                  // <BlogTile
-                  //   key={link.id}
-                  //   title={link.properties.Name.title[0].plain_text}
-                  //   // url={`/blogs/${link.properties.Slug.rich_text[0].plain_text}`}
-                  //   url={`/blogs/${link.id}`}
-                  //   date={link.properties.Time.date.start}
-                  //   fav={link.properties.Fav.checkbox}
-                  //   tags={link.properties.Tags.multi_select}
-                  //   desc={link.properties.Description.rich_text[0].plain_text}
-                  //   // notableUrl={
-                  //   //   link.properties.NotableUrl.url == null
-                  //   //     ? null
-                  //   //     : link.properties.NotableUrl.url
-                  //   // }
-                  //   // notableTitle={
-                  //   //   link.properties.NotableTitle.rich_text[0] == undefined
-                  //   //     ? null
-                  //   //     : link.properties.NotableTitle.rich_text[0].plain_text
-                  //   // }
-                  // />
                 ))
               )
             ) : (
@@ -279,15 +235,11 @@ export default function Talent({ list }) {
   );
 }
 
-// export async function getStaticPaths() {
-//   return {fallback: false}
-// }
 export async function getStaticProps() {
   const res = (await getPosts())
 
   return {
     props: {
-      // list: response.results,
       list: JSON.parse(JSON.stringify(res.posts))
     },
     revalidate: 60,

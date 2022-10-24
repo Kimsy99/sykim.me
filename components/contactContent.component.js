@@ -22,13 +22,8 @@ export default function ContactContent({ inModal }) {
 
   useEffect(() => {
     if (document) {
-      // setThisDocument(document.getElementById("__next"));
       setThisDocument(document.body);
     }
-    // navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-    //   if (result.state == "granted" || result.state == "prompt") {
-    //   }
-    // });
   }, []);
 
   return (
