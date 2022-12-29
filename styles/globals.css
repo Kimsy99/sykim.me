@@ -3,316 +3,29 @@
 @import "@radix-ui/colors/blackA.css";
 @import "@radix-ui/colors/grayDark.css";
 
-/* @font-face {
+ @font-face {
   font-family: "Aktiv Grotesk";
   src: url("/fonts/AktivGroteskVF_W_Wght.woff2")
       format("woff2 supports variations"),
     url("/fonts/AktivGroteskVF_W_Wght.woff2") format("woff2-variations");
 
   font-weight: 100 900;
-} */
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextMedium.eot');
-  src: local('Magnat Text Medium'), local('/fonts/magnat/Magnat-TextMedium'),
-      url('/fonts/magnat/Magnat-TextMedium.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextMedium.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextMedium.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextMedium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextLightItalic.eot');
-  src: local('Magnat Text Light Italic'), local('/fonts/magnat/Magnat-TextLightItalic'),
-      url('/fonts/magnat/Magnat-TextLightItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextLightItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextLightItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextLightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextRegularItalic.eot');
-  src: local('Magnat Text Regular Italic'), local('/fonts/magnat/Magnat-TextRegularItalic'),
-      url('/fonts/magnat/Magnat-TextRegularItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextRegularItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextRegularItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextRegularItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadExtraBold.eot');
-  src: local('Magnat Head ExtraBold'), local('/fonts/magnat/Magnat-HeadExtraBold'),
-      url('/fonts/magnat/Magnat-HeadExtraBold.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadExtraBold.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadExtraBold.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadLight.eot');
-  src: local('Magnat Head Light'), local('/fonts/magnat/Magnat-HeadLight'),
-      url('/fonts/magnat/Magnat-HeadLight.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadLight.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadLight.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadLight.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextBoldItalic.eot');
-  src: local('Magnat Text Bold Italic'), local('/fonts/magnat/Magnat-TextBoldItalic'),
-      url('/fonts/magnat/Magnat-TextBoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextBoldItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextBoldItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextBoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextLight.eot');
-  src: local('Magnat Text Light'), local('/fonts/magnat/Magnat-TextLight'),
-      url('/fonts/magnat/Magnat-TextLight.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextLight.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextLight.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextLight.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextExtraBoldItalic.eot');
-  src: local('Magnat Text ExtraBold Italic'), local('/fonts/magnat/Magnat-TextExtraBoldItalic'),
-      url('/fonts/magnat/Magnat-TextExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextExtraBoldItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextExtraBoldItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadSemiBoldItalic.eot');
-  src: local('Magnat Head SemiBold Italic'), local('/fonts/magnat/Magnat-HeadSemiBoldItalic'),
-      url('/fonts/magnat/Magnat-HeadSemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadSemiBoldItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadSemiBoldItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadSemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadRegular.eot');
-  src: local('Magnat Head Regular'), local('/fonts/magnat/Magnat-HeadRegular'),
-      url('/fonts/magnat/Magnat-HeadRegular.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadRegular.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadRegular.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadLightItalic.eot');
-  src: local('Magnat Head Light Italic'), local('/fonts/magnat/Magnat-HeadLightItalic'),
-      url('/fonts/magnat/Magnat-HeadLightItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadLightItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadLightItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadLightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadBoldItalic.eot');
-  src: local('Magnat Head Bold Italic'), local('/fonts/magnat/Magnat-HeadBoldItalic'),
-      url('/fonts/magnat/Magnat-HeadBoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadBoldItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadBoldItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadBoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadBold.eot');
-  src: local('Magnat Head Bold'), local('/fonts/magnat/Magnat-HeadBold'),
-      url('/fonts/magnat/Magnat-HeadBold.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadBold.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadBold.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadMedium.eot');
-  src: local('Magnat Head Medium'), local('/fonts/magnat/Magnat-HeadMedium'),
-      url('/fonts/magnat/Magnat-HeadMedium.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadMedium.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadMedium.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadMedium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadExtraBoldItalic.eot');
-  src: local('Magnat Head ExtraBold Italic'), local('/fonts/magnat/Magnat-HeadExtraBoldItalic'),
-      url('/fonts/magnat/Magnat-HeadExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadExtraBoldItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadExtraBoldItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextSemiBoldItalic.eot');
-  src: local('Magnat Text SemiBold Italic'), local('/fonts/magnat/Magnat-TextSemiBoldItalic'),
-      url('/fonts/magnat/Magnat-TextSemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextSemiBoldItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextSemiBoldItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextSemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextRegular.eot');
-  src: local('Magnat Text Regular'), local('/fonts/magnat/Magnat-TextRegular'),
-      url('/fonts/magnat/Magnat-TextRegular.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextRegular.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextRegular.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextSemiBold.eot');
-  src: local('Magnat Text SemiBold'), local('/fonts/magnat/Magnat-TextSemiBold'),
-      url('/fonts/magnat/Magnat-TextSemiBold.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextSemiBold.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextSemiBold.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextSemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextBold.eot');
-  src: local('Magnat Text Bold'), local('/fonts/magnat/Magnat-TextBold'),
-      url('/fonts/magnat/Magnat-TextBold.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextBold.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextBold.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextMediumItalic.eot');
-  src: local('Magnat Text Medium Italic'), local('/fonts/magnat/Magnat-TextMediumItalic'),
-      url('/fonts/magnat/Magnat-TextMediumItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextMediumItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextMediumItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextMediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Text';
-  src: url('/fonts/magnat/Magnat-TextExtraBold.eot');
-  src: local('Magnat Text ExtraBold'), local('/fonts/magnat/Magnat-TextExtraBold'),
-      url('/fonts/magnat/Magnat-TextExtraBold.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-TextExtraBold.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-TextExtraBold.woff') format('woff'),
-      url('/fonts/magnat/Magnat-TextExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadRegularItalic.eot');
-  src: local('Magnat Head Regular Italic'), local('/fonts/magnat/Magnat-HeadRegularItalic'),
-      url('/fonts/magnat/Magnat-HeadRegularItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadRegularItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadRegularItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadRegularItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadSemiBold.eot');
-  src: local('Magnat Head SemiBold'), local('/fonts/magnat/Magnat-HeadSemiBold'),
-      url('/fonts/magnat/Magnat-HeadSemiBold.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadSemiBold.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadSemiBold.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadSemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Magnat Head';
-  src: url('/fonts/magnat/Magnat-HeadMediumItalic.eot');
-  src: local('Magnat Head Medium Italic'), local('/fonts/magnat/Magnat-HeadMediumItalic'),
-      url('/fonts/magnat/Magnat-HeadMediumItalic.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/magnat/Magnat-HeadMediumItalic.woff2') format('woff2'),
-      url('/fonts/magnat/Magnat-HeadMediumItalic.woff') format('woff'),
-      url('/fonts/magnat/Magnat-HeadMediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
-}
+} 
 
 /* Point */
 @import url("https://rsms.me/inter/inter.css");
 html {
-  font-family: "Magnat Text", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 @supports (font-variation-settings: normal) {
   html {
-    font-family: "Magnat Text", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: "Inter var", sans-serif;
+    font-weight: 100 900;
   }
 }
 
 :root {
-  --font-sans: Magnat Text;
-  /* --font-serif: Blanco; */
+  --font-sans: Aktiv Grotesk;
 
   --font-l: 14.9px;
   --font-m: 13.7px;
@@ -412,14 +125,10 @@ button {
   font-family: var(--font-sans);
   position: relative;
 }
-h1, h2{
-  font-family: "Magnat Head", serif;
-  font-weight: 600 !important;
-  letter-spacing: -1px;
-}
+
 p {
   letter-spacing: 0.1px;
-  font-weight: 300;
+  font-weight: 390;
   font-style: normal;
 }
 
