@@ -6,10 +6,10 @@ import ContactContent from "../components/contactContent.component";
 import ExpTile from "../components/tiles/expTile";
 import Script from "next/script";
 import { marked } from "marked";
-import {aboutContent} from "../markdown/about.md"
+import { aboutContent } from "../markdown/about.md"
 // const aboutContent = require("../markdown/about.md")
 
-export default function About({content}) {
+export default function About({ content }) {
   useEffect(() => {
     let thisPage = document.querySelector("#aboutPage");
     let top = sessionStorage.getItem("about-scroll");
@@ -23,7 +23,7 @@ export default function About({content}) {
     return () => thisPage.removeEventListener("scroll", handleScroll);
   }, []);
   const description =
-    "A summary of me, my interests, my design career, and why/how this site was built.";
+    "A summary of me, my interests, my career, and why/how this site was built.";
   return (
     <>
       <Head>
@@ -38,7 +38,7 @@ export default function About({content}) {
           <div className={util.inset}>
             <p className={util.description}>{description}</p>
             <div className={util.divider}></div>
-            <div className={util.read} dangerouslySetInnerHTML={{__html: content}}>
+            <div className={util.read} dangerouslySetInnerHTML={{ __html: content }}>
             </div>
 
             <div>
@@ -70,7 +70,7 @@ export default function About({content}) {
                 url={"https://tinkerve.com"}
                 content={`Doing some stuff there. Mainly <a href="https://getdwa.com/" target="_blank" rel="noopener noreferrer">Digital Workspace Assistant</a>.`}
               />
-            
+
             </div>
             <div className={util.read}>
               <h2>This Site</h2>
@@ -82,15 +82,15 @@ export default function About({content}) {
                   rel="noopener noreferrer"
                   className={util.normalLink}
                 >
-                 sj.land 
+                  sj.land
                 </a> and inspired by <a
                   href="https://rauno.me/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={util.normalLink}
                 >
-                 rauno.me 
-                </a> 
+                  rauno.me
+                </a>
 
               </p>
 
@@ -180,10 +180,10 @@ export default function About({content}) {
 export async function getStaticProps() {
   const content = await import(`../markdown/about.md`)
   const renderer = new marked.Renderer();
-  renderer.link = ( href, title, text ) => href.includes("http") ? `<a target="_blank" rel="noopener noreferrer" href="${ href }"">${ text }</a>` : `<a href="${ href }">${ text }</a>`;
+  renderer.link = (href, title, text) => href.includes("http") ? `<a target="_blank" rel="noopener noreferrer" href="${href}"">${text}</a>` : `<a href="${href}">${text}</a>`;
   return {
     props: {
-      content: marked(content.default, {renderer})
+      content: marked(content.default, { renderer })
     }
   };
 }
