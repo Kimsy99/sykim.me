@@ -28,19 +28,7 @@ export default function Menu() {
             label="Writings"
             shortcut="4"
           />
-          <NavLink
-            svg="reading"
-            href="/reading-list"
-            label="Reading List"
-            shortcut="5"
-          />
-          {/* <NavLink
-            svg="reading"
-            href="/reading-list"
-            label="Reading List"
-            shortcut="5"
-          />
-          <NavLink svg="users" href="/talent" label="Talent" shortcut="6" /> */}
+          {/* Reading list removed */}
           {/* <NavLink
             svg="newsletters"
             href="/newsletters"
