@@ -46,7 +46,7 @@ export default function Projects() {
                 "I worked as a Product Manager at CoinGecko. Leading development of CoinGecko.com, Mobile App, Supply Side Growth, Monetization, and data infrastucture."
               }
               type="Product · Full-time"
-              date="2022-6-27"
+              date="2022-2-1"
               url={"https://www.coingecko.com/"}
             />
             <ProjectTile
@@ -56,7 +56,7 @@ export default function Projects() {
                 "Monsta Infinite is an NFT breeding, battle, and building game that falls under the rapidly growing 'play-to-earn' and GameFi sector on the Binance Smart Chain. I am responsible in building the Monsta Marketplace and also Monsta Wallet which are used by more than 100,000 users. Technologies: ReactJS Web3, Typescript, GraphQL, Metamask, Solidity."
               }
               type="Web3 Software Engineer · Contract"
-              date="2022-2-1"
+              date="2021"
             />
             <ProjectTile
               image="getdwa"
@@ -65,7 +65,7 @@ export default function Projects() {
                 "Develop and maintain Digital Workspace Assistant that allow user to access workspace through chat based application. Integrated system with Telegram API for users to interact with the system through Telegram Bots. Developed a Role based System for authorization in the system and involved in integrating 'Flow Builder', which is the main core logic for the product. Technologies: Typescript, MongoDB, ExpressJS, ReactJS, NodeJS, Redux, React-testing-library, Mocha, Chai, Jenkins."
               }
               type="Web · Intern"
-              date="2022-2-1"
+              date="2021"
               url={"https://getdwa.com/"}
             />
             <ProjectTile
@@ -74,7 +74,7 @@ export default function Projects() {
                 "Develop and maintain document management system for clients which is a second-hand car retail company to manage their stocks, sales efficiently. Technologies: ReactJS, Redux, Firebase, SCSS, ChartJS, Git"
               }
               type="Web · Freelance"
-              date="2022-2-1"
+              date="2020"
             />
             <ProjectTile
               image="dsckitahack"
@@ -83,7 +83,7 @@ export default function Projects() {
                 "Landing Page of DSC Malaysia for DSC Kita Hack hackathon to display event, registration details and more."
               }
               type="Web · Volunteer"
-              date="2022-2-1"
+              date="2020"
             />
             <ProjectTile
               image="dacn"
@@ -92,7 +92,7 @@ export default function Projects() {
                 "Landing Page of Data Analytics Consultancy Network which is a non profit organization that help local businesses enhance business performance through the use of data analytics through recruiting student consultants."
               }
               type="Web · Volunteer"
-              date="2022-2-1"
+              date="2020"
             />
           </ul>
           <p

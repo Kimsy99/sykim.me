@@ -17,7 +17,6 @@ export default function ProjectTile({
       <p className={styles.date}>
         {new Date(date).toLocaleDateString("en-US", {
           year: "numeric",
-          month: "short",
         })}
       </p>
       {internal ? (
@@ -38,7 +37,7 @@ export default function ProjectTile({
                 />
               )
             }
-           
+
             <div className={styles.stack}>
               <h3 className={util.tileTitle}>{title}</h3>
               <p className={util.tileContent}>{content}</p>
@@ -48,24 +47,24 @@ export default function ProjectTile({
         </Link>
       ) : (
         <>
-         { !url ? (
+          {!url ? (
             <div
-          className={styles.container}
-        >
-          {
-              image && (
-                <Image
-                  priority
-                  className={styles.image}
-                  src={"/projects/" + image + ".png"}
-                  width={400}
-                  height={220}
-                  layout="responsive"
-                  alt={title}
-                />
-              )
-            }
-          {/* <Image
+              className={styles.container}
+            >
+              {
+                image && (
+                  <Image
+                    priority
+                    className={styles.image}
+                    src={"/projects/" + image + ".png"}
+                    width={400}
+                    height={220}
+                    layout="responsive"
+                    alt={title}
+                  />
+                )
+              }
+              {/* <Image
             className={styles.image}
             // priority
             src={"/projects/" + image + ".png"}
@@ -77,43 +76,43 @@ export default function ProjectTile({
             alt={title}
           /> */}
 
-          <div className={styles.stack}>
-            <div className={styles.row}>
-              <h3 className={util.tileTitle}>{title}</h3>
-              <span className={styles.externalIcon}>↗</span>
-            </div>
+              <div className={styles.stack}>
+                <div className={styles.row}>
+                  <h3 className={util.tileTitle}>{title}</h3>
+                  <span className={styles.externalIcon}>↗</span>
+                </div>
 
-            <p className={util.tileContent}>{content}</p>
-            <p className={styles.type}>{type}</p>
-          </div>
-        </div>
-          )
-          : (<a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.container}
-          >
-            <Image
-              className={styles.image}
-              // priority
-              src={"/projects/" + image + ".png"}
-              width={400}
-              height={220}
-              layout="responsive"
-              alt={title}
-            />
-  
-            <div className={styles.stack}>
-              <div className={styles.row}>
-                <h3 className={util.tileTitle}>{title}</h3>
-                <span className={styles.externalIcon}>↗</span>
+                <p className={util.tileContent}>{content}</p>
+                <p className={styles.type}>{type}</p>
               </div>
-  
-              <p className={util.tileContent}>{content}</p>
-              <p className={styles.type}>{type}</p>
             </div>
-          </a>)}
+          )
+            : (<a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.container}
+            >
+              <Image
+                className={styles.image}
+                // priority
+                src={"/projects/" + image + ".png"}
+                width={400}
+                height={220}
+                layout="responsive"
+                alt={title}
+              />
+
+              <div className={styles.stack}>
+                <div className={styles.row}>
+                  <h3 className={util.tileTitle}>{title}</h3>
+                  <span className={styles.externalIcon}>↗</span>
+                </div>
+
+                <p className={util.tileContent}>{content}</p>
+                <p className={styles.type}>{type}</p>
+              </div>
+            </a>)}
         </>
       )}
     </div>
