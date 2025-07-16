@@ -36,14 +36,14 @@ export default function Projects() {
         <div className={util.pageColumn}>
           <h1 className={util.header}>Projects</h1>
           <p className={util.description}>
-          Projects/Products I worked on for the past years. 
+            Projects/Products I worked on for the past years.
           </p>
           <ul className={util.list}>
             <ProjectTile
               image="coingecko"
               title="CoinGecko"
               content={
-                "I worked as a Associate Product Manager at CoinGecko. Mostly working on CoinGecko.com, which is our main product."
+                "I worked as a Product Manager at CoinGecko. Leading development of CoinGecko.com, Mobile App, Supply Side Growth, Monetization, and data infrastucture."
               }
               type="Product · Full-time"
               date="2022-6-27"
