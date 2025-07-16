@@ -40,7 +40,6 @@ export default function Home({ list,favArticles,latestBlogs }) {
           <div className={util.divider}></div>
           <div className={util.spaceBetween}>
             <h2 className={util.headerSecondary}>Recent Favourite Reads</h2>
-            <Link href="/reading-list"><a className={util.internalLink + " " + util.description}>Read More →</a></Link>
           </div>
           <div>
           {favArticles ? (
